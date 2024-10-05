@@ -61,7 +61,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # Use your PAT here
         with:
           tag_name: v${{ steps.date.outputs.date || github.run_number }}-release
-          release_name: Arch Linux ISO Release ${{ steps.date.outputs.date || github.run_number }}
+          release_name: ${{ steps.date.outputs.date }}  # Current date as release title
           body: |
             This release contains the ArchGUI ISO built on ${{ steps.date.outputs.date }}.
           draft: false
@@ -75,7 +75,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ${{ github.workspace }}/ArchGUI.iso
-          asset_name: Arch-ISO-${{ steps.date.outputs.date }}.iso
+          asset_name: ArchGUI-${{ steps.date.outputs.date }}.iso  # Update ISO name to include ArchGUI
           asset_content_type: application/octet-stream
 
       - name: Clean Up
