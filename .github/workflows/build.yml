@@ -1,4 +1,4 @@
-name: Build ISO
+name: Build ArchGUI ISO
 
 on:
   push:
