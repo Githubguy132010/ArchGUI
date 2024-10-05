@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Name=Install Arch Linux
+Comment=Run Arch Linux Installer
+Exec=konsole -e archinstall
+Terminal=false
+Type=Application
