@@ -36,7 +36,7 @@ jobs:
           docker exec arch-container bash -c "
           # Find the created ISO (assuming only one .iso file in the output directory)
           iso_file=\$(ls /workdir/out/*.iso | head -n 1) &&
-          mv \$iso_file /workdir/out/Arch.iso
+          mv \$iso_file /workdir/out/ArchGUI.iso
           "
 
       - name: List ISO files
@@ -47,7 +47,7 @@ jobs:
       - name: Copy ISO to Host
         run: |
           # Copy the renamed ISO to the host
-          docker cp arch-container:/workdir/out/Arch.iso ${{ github.workspace }}/
+          docker cp arch-container:/workdir/out/ArchGUI.iso ${{ github.workspace }}/
 
       - name: Get current date
         id: date
@@ -63,7 +63,7 @@ jobs:
           tag_name: v${{ github.event.inputs.date || github.run_number }}-release
           release_name: Arch Linux ISO Release ${{ github.event.inputs.date || github.run_number }}
           body: |
-            This release contains the Arch Linux ISO built on ${{ steps.date.outputs.date }}.
+            This release contains the ArchGUI ISO built on ${{ steps.date.outputs.date }}.
           draft: false
           prerelease: false
 
