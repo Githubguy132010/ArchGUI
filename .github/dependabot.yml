@@ -1,11 +1,19 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-
 version: 2
 updates:
-  - package-ecosystem: "" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  # Update for GitHub Actions dependencies
+  - package-ecosystem: "github-actions"
+    directory: "/"              # Root directory where your GitHub Actions workflows are located (usually `.github/workflows`)
     schedule:
-      interval: "daily"
+      interval: "daily"        # Check for updates daily
+      day: "monday"             # Run every Monday
+      time: "08:00"             # At 8:00 UTC
+    labels:
+      - "github-actions"
+    assignees:
+      - "Githubguy132010"         # Replace with your GitHub username
+
+# Configuration for automatic merging of Dependabot PRs
+merge-strategy:
+  github-actions:
+    method: "squash"            # Merge strategy: Options are "merge", "squash", or "rebase"
+
