@@ -28,12 +28,19 @@ The workflow is set up using GitHub Actions, with Docker to build the ISO inside
    ```bash
    git clone https://github.com/your-username/ArchGUI.git
    ```
+2. **Run Workflow**
 
-2. **Run Workflow Automatically**: The workflow triggers on:
+   You can run the workflow manually by going to Actions > Build ISO and click on run Workflow.
+   Keep in mind you are going to need a PAT (Personal access Token) and you need to edit the Workflow to reflect your PAT.
+
+
+
+
+3. **Run Workflow Automatically**: The workflow triggers on:
    - **Pushes** and **Pull Requests** to the `main` branch
    - **Scheduled daily builds** at midnight (UTC)
 
-3. **Download the ISO**:
+4. **Download the ISO**:
    - Visit the [releases page](https://github.com/your-username/ArchGUI/releases) to download the latest ISO.
 
 ## Configuration Details
