@@ -2,18 +2,12 @@ version: 2
 updates:
   # Update for GitHub Actions dependencies
   - package-ecosystem: "github-actions"
-    directory: "/"              # Root directory where your GitHub Actions workflows are located (usually `.github/workflows`)
+    directory: "/"              # Root directory where your GitHub Actions workflows are located (usually .github/workflows)
     schedule:
-      interval: "daily"        # Check for updates daily
+      interval: "daily"        # Check for updates weekly
       day: "monday"             # Run every Monday
       time: "08:00"             # At 8:00 UTC
     labels:
       - "github-actions"
     assignees:
       - "Githubguy132010"         # Replace with your GitHub username
-
-# Configuration for automatic merging of Dependabot PRs
-merge-strategy:
-  github-actions:
-    method: "squash"            # Merge strategy: Options are "merge", "squash", or "rebase"
-
