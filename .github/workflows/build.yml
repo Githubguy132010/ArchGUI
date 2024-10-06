@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
   schedule:
     # Run the workflow on the 1st of every month at midnight
-    - cron: '0 0 1 * *'
+    - cron: '0 0 * * *'
 
 jobs:
   build:
