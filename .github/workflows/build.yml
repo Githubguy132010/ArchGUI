@@ -56,7 +56,7 @@ jobs:
       # Create a release on GitHub using Personal Access Token (PAT)
       - name: Create GitHub Release
         id: create_release  # Store the release details for later steps
-        uses: actions/create-release@v1.1.0
+        uses: actions/create-release@v1.1.4
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # Use your PAT here
         with:
