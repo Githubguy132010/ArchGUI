@@ -37,14 +37,8 @@ file_permissions=(
   ["/usr/local/bin/Installation_guide"]="0:0:755"
   ["/usr/local/bin/livecd-sound"]="0:0:755"
   
-  # Your custom setup script
-  ["/root/custom-scripts/setup.sh"]="0:0:755"
 
   # Install Arch Linux desktop entry
   ["/etc/skel/Desktop/install-arch.desktop"]="0:0:755"
 
-)
-
-run_once=(
-  "/root/custom-scripts/setup.sh"
 )

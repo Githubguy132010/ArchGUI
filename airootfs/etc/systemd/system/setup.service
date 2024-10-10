@@ -1,0 +1,10 @@
+[Unit]
+Description=Setup Script
+
+[Service]
+Type=oneshot
+ExecStart=/root/custom-scripts/setup.sh
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
